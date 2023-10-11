@@ -6,7 +6,7 @@ module.exports = {
 			colors: {
 				skin: {
 					"canvas-pri": "#fafafa", // Off white canvas
-					"cavnas-sec": "979797", // Darker gray
+					"canvas-sec": "#979797", // Darker gray
 					"canvas-inverted": "some color",
 					"brand-pri": "#000000", // Black
 					"brand-sec": "#B1B1B1", // Gray
@@ -15,7 +15,7 @@ module.exports = {
 					"text-pri": "#7A7A7A", // Gray text
 					"text-sec": "som",
 					"text-inverted": "some color",
-					"dim-brand-accent": "2F2F2F", // Dim Gray
+					"dim-brand-accent": "#2F2F2F", // Dim Gray
 					"active-brand-accent": "#147A73", // Dark Green
 				},
 			},
@@ -33,16 +33,8 @@ module.exports = {
 				hdgL: "1.75rem", // 28px
 				hdgM: "1.25rem", // 20px
 				hdgS: "1.125rem", // 18px
-				bodyMobile: {
-					".875rem": {
-						lineHeight: "1.5rem", //24px
-					},
-				}, //Mobile text 14px
-				bodyDesktop: {
-					"1rem": {
-						lineHeight: "1.875rem", //30px
-					},
-				},
+				bodyMobile: [".875rem", "1.5rem"], //Mobile text 14px
+				bodyDesktop: ["1rem", "1.75rem"],
 			},
 		},
 	},
