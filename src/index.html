@@ -283,53 +283,142 @@
 							opacity=".4" />
 					</svg>
 				</div>
-				<p class="mb-6">
-					Want to support us in bringing Mastercraft Bamboo Monitor Riser
-					out in the world?
-				</p>
+
 				<form class="space-y-6">
 					<div
-						class="py-6 px-6 border-2 border-skin-text-pri/20 rounded-xl">
-						<div class="flex items-center md:justify-between">
-							<div class="w-full text-left">
-								<input
-									class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
-									type="radio"
-									id="radio-metric"
-									name="unitMeasurements"
-									autocomplete="off"
-									value="metric" />
+						class="py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						<input
+							class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
+							type="radio"
+							id="pledge-no-reward"
+							name="pledgOptions"
+							autocomplete="off"
+							value="noReward" />
+						<div>
+							<label
+								class="ml-6 text-skin-brand-pri font-bold"
+								for="radio-metric"
+								>Pledge with no reward</label
+							>
+						</div>
+						<p class="mt-6 col-span-2">
+							Choose to support us without a reward if you simply believe
+							in our project. As a backer, you will be signed up to
+							receive product updates via email.
+						</p>
+					</div>
+					<div
+						class="py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						<div class="flex items-center">
+							<input
+								class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
+								type="radio"
+								id="pledge-bamboo-stand"
+								name="pledgOptions"
+								autocomplete="off"
+								value="bambooStand" />
+							<div class="ml-6 flex flex-col">
 								<label
-									class="ml-4 text-skin-brand-pri font-bold"
+									class="text-skin-brand-pri font-bold"
 									for="radio-metric"
-									>Pledge with no reward</label
+									>Bamboo Stand</label
+								>
+								<span class="text-skin-brand-accent"
+									>Pledge $25 or more</span
 								>
 							</div>
-							<h2 class="mb-2 text-skin-brand-pri font-bold">
-								Black Edition Stand
-							</h2>
-							<h3 class="mb-6 text-skin-brand-accent">
-								Pledge $75 or more
-							</h3>
 						</div>
-						<p class="mb-8">
+						<p class="mt-6 col-span-2">
+							You get an ergonomic stand made of natural bamboo. You've
+							helped us launch our promotional campaign, and you’ll be
+							added to a special Backer member list.
+						</p>
+						<div class="mt-6 flex items-end span-2">
+							<span
+								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
+								>101</span
+							>
+							<span class="text-[15px] leading-none">left</span>
+						</div>
+
+						<!-- Pledge inputs if pledge is selected (otherwise hidden) -->
+						<div
+							class="px-4 pt-6 pb-4 border-t-2 border-skin-text-pri/20 -mx-6">
+							<p>Enter your pledge</p>
+							<input
+								id="bamboo-pledge-amount"
+								name="bambooPledgeAmount"
+								type="text"
+								pattern="[a-z]*" />
+						</div>
+					</div>
+					<div
+						class="py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						<div class="flex items-center">
+							<input
+								class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
+								type="radio"
+								id="pledge-black-edition"
+								name="pledgOptions"
+								autocomplete="off"
+								value="blackEdition" />
+							<div class="ml-6 flex flex-col">
+								<label
+									class="text-skin-brand-pri font-bold"
+									for="radio-metric"
+									>Black Edition Stand</label
+								>
+								<span class="text-skin-brand-accent"
+									>Pledge $75 or more</span
+								>
+							</div>
+						</div>
+						<p class="mt-6 col-span-2">
 							You get a Black Special Edition computer stand and a
 							personal thank you. You’ll be added to our Backer member
 							list. Shipping is included.
 						</p>
-						<div
-							class="contents md:flex md:items-center md:justify-between">
-							<div class="mb-8 md:mb-0 flex">
-								<span
-									class="text-skin-brand-pri font-bold text-hdgXl mr-2"
-									>64</span
+						<div class="mt-6 flex items-end span-2">
+							<span
+								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
+								>64</span
+							>
+							<span class="text-[15px] leading-none">left</span>
+						</div>
+					</div>
+					<div
+						class="py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						<input
+							class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
+							type="radio"
+							id="pledge-mahogany-edition"
+							name="pledgOptions"
+							disabled
+							autocomplete="off"
+							value="mahoganyEdition" />
+						<div class="flex items-center">
+							<div class="ml-6 flex flex-col">
+								<label
+									class="text-skin-brand-pri font-bold"
+									for="radio-metric"
+									>Mahogany Special Edition</label
 								>
-								<span class="text-bodyDesktop">left</span>
+								<span class="text-skin-brand-accent"
+									>Pledge $200 or more</span
+								>
 							</div>
-							<button
-								class="py-3 px-8 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert hover:bg-skin-active-brand-accent font-bold">
-								Select Reward
-							</button>
+						</div>
+						<p class="mt-6 col-span-2">
+							You get two Special Edition Mahogany stands, a Backer
+							T-Shirt, and a personal thank you. You’ll be added to our
+							Backer member list. Shipping is included.
+						</p>
+						<div class="mt-6 flex items-end span-2">
+							<span
+								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
+								>0</span
+							>
+							<span class="text-[15px] leading-none">left</span>
 						</div>
 					</div>
 				</form>
