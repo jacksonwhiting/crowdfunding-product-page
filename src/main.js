@@ -6,14 +6,14 @@ const pledgeDialogArr = [...pledgeDialogForm]
 
 pledgeDialogArr.forEach((el) => {
 	if (el.type === "radio") {
-		el.addEventListener("input", (e) => {
+		el.addEventListener("click", (e) => {
 			const selectedPledgeBox = document.querySelector(
-				`[data-reward=${e.target.value}]`
+				`div[data-reward=${e.target.value}]`
 			)
 			//Show the pledge box if radio button is clicked
-			selectedPledgeBox.classList.remove("hidden")
+			selectedPledgeBox.classList.toggle("hidden")
 
-			const allPledgeBoxes = document.querySelectorAll("[data-reward]")
+			const allPledgeBoxes = document.querySelectorAll("div[data-reward]")
 
 			allPledgeBoxes.forEach((box) => {
 				if (
@@ -34,14 +34,6 @@ const openDialog = (dialog) => {
 const closeDialog = (dialog) => {
 	dialog.close()
 }
-
-/*
-When clicking the hamburger menu...
-   - Show pop-out-nav-box (remove hidden)
-   - Show backdrop (remove hidden)
-   - Set opacity 100 on Nav items
-   - Replace hamburger menu with x icon
-*/
 
 let displayPopOutNav = () => {
 	const hamburgerMenuIcon = document.querySelectorAll("#hamburger-menu-icon")
@@ -66,3 +58,24 @@ let closePopOutNav = () => {
 	xIcon.classList.add("hidden")
 	hamburgerMenuIcon[0].classList.remove("hidden")
 }
+
+let bookmarkProject = () => {
+	const bookmarkBtnEl = document.querySelector("#main-bookmark-btn")
+	const bookmarkIconCircleEl = document.querySelector(
+		"#main-bookmark-icon-circle"
+	)
+	const bookmarkIconSymbolEl = document.querySelector(
+		"#main-bookmark-icon-symbol"
+	)
+	const bookmarkTextEl = document.querySelector("#main-bookmark-text")
+
+	bookmarkBtnEl.addEventListener("click", (e) => {
+		bookmarkTextEl.classList.toggle("text-skin-active-brand-accent")
+		bookmarkTextEl.textContent = "Bookmarked"
+		bookmarkIconCircleEl.classList.toggle("fill-skin-dim-brand-accent")
+		bookmarkIconCircleEl.classList.toggle("fill-skin-active-brand-accent")
+		bookmarkIconSymbolEl.style.fill = "white"
+	})
+}
+
+bookmarkProject()

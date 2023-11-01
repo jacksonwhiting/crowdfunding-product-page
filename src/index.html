@@ -9,7 +9,6 @@
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 		<link
 			rel="icon"
 			type="image/png"
@@ -32,7 +31,7 @@
 		class="font-fontPri text-bodyMobile md:text-bodyDesktop font-light text-skin-text-pri/80 bg-skin-canvas-pri">
 		<div
 			id="main-backdrop"
-			class="hidden w-full h-full absolute bg-black opacity-40 z-20"></div>
+			class="hidden md:hidden w-full h-full absolute bg-black opacity-40 z-20"></div>
 		<main class="relative z-">
 			<header
 				class="pt-8 px-6 md:px-20 min-h-[300px] md:min-h-[400px] bg-[url('../assets/images/image-hero-mobile.jpg')] bg-center bg-cover">
@@ -65,39 +64,47 @@
 
 					<!-- Full nav links on MD and higher -->
 					<ul class="hidden space-x-10 md:flex">
-						<li class="text-skin-brand-tert text-[13px] cursor-pointer">
-							About
+						<li
+							tabindex="0"
+							class="text-skin-brand-tert text-[13px] cursor-pointer hover:underline">
+							<a href="#">About</a>
 						</li>
-						<li class="text-skin-brand-tert text-[13px] cursor-pointer">
-							Discover
+						<li
+							tabindex="0"
+							class="text-skin-brand-tert text-[13px] cursor-pointer hover:underline">
+							<a href="#">Discover</a>
 						</li>
-						<li class="text-skin-brand-tert text-[13px] cursor-pointer">
-							Get Started
+						<li
+							tabindex="0"
+							class="text-skin-brand-tert text-[13px] cursor-pointer hover:underline">
+							<a href="#">Get Started</a>
 						</li>
 					</ul>
 
 					<!-- pop out nav on mobile (after clicking hamburger icon) -->
-					<ul
-						id="pop-out-nav-box"
-						class="hidden absolute w-full bg-skin-brand-tert top-16 text-skin-brand-pri text-hdgS rounded-xl divide-y-2 divide-skin-canvas-sec/20">
-						<li
-							class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
-							About
-						</li>
-						<li
-							class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
-							Discover
-						</li>
-						<li
-							class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
-							Get Started
-						</li>
-					</ul>
+					<div class="absolute w-full top-16 flex justify-center mx-auto">
+						<ul
+							id="pop-out-nav-box"
+							class="hidden md:hidden w-full max-w-[500px] bg-skin-brand-tert text-skin-brand-pri text-hdgS rounded-xl divide-y-2 divide-skin-canvas-sec/20">
+							<li
+								class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
+								About
+							</li>
+							<li
+								class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
+								Discover
+							</li>
+							<li
+								class="py-6 px-6 cursor-pointer hover:bg-skin-canvas-sec/10">
+								Get Started
+							</li>
+						</ul>
+					</div>
 
 					<!-- X icon to close hamburger -->
 					<svg
 						id="x-icon-mobile-pop-out"
-						class="hidden fill-white cursor-pointer"
+						class="hidden md:hidden fill-white cursor-pointer"
 						onclick="closePopOutNav()"
 						width="15"
 						height="15"
@@ -147,7 +154,8 @@
 							Back this project
 						</button>
 						<button
-							class="contents group cursor-pointer bg-skin-brand-sec/20 pr-6 rounded-full md:flex md:items-center md:space-x-2">
+							id="main-bookmark-btn"
+							class="contents group cursor-pointer bg-skin-brand-sec/20 pr-6 rounded-full md:flex md:items-center md:space-x-2 text-skin text-skin">
 							<svg
 								class=""
 								width="56"
@@ -155,17 +163,20 @@
 								xmlns="http://www.w3.org/2000/svg">
 								<g fill="none" fill-rule="evenodd">
 									<circle
+										id="main-bookmark-icon-circle"
 										class="fill-skin-dim-brand-accent group-hover:fill-skin-dim-brand-accent/60"
 										fill=""
 										cx="28"
 										cy="28"
 										r="28" />
 									<path
+										id="main-bookmark-icon-symbol"
 										fill="#B1B1B1"
 										d="M23 19v18l5-5.058L33 37V19z" />
 								</g>
 							</svg>
 							<span
+								id="main-bookmark-text"
 								class="hidden md:inline text-bodyDesktop font-semibold"
 								>Bookmark</span
 							>
@@ -178,7 +189,9 @@
 				class="mx-auto -mt-6 md:-mt-10 max-w-[327px] md:max-w-[730px] py-10 px-6 md:px-10 bg-skin-brand-tert text-center md:text-left rounded-xl">
 				<div class="contents md:flex md:space-x-20">
 					<div class="mb-6">
-						<p class="mb-3 text-hdgXl text-skin-brand-pri font-bold">
+						<p
+							id="total-backed"
+							class="mb-3 text-hdgXl text-skin-brand-pri font-bold">
 							$89,914
 						</p>
 						<p class="mb-4">of $100,000 backed</p>
@@ -186,7 +199,9 @@
 					<div
 						class="mb-8 w-[80px] md:w-0 md:h-[63px] mx-auto md:mx-0 border-spacing-1 border-skin-text-pri border-b-2 md:border-b-0 md:border-l-2 opacity-20"></div>
 					<div class="mb-6">
-						<p class="mb-3 text-hdgXl text-skin-brand-pri font-bold">
+						<p
+							id="total-backers"
+							class="mb-3 text-hdgXl text-skin-brand-pri font-bold">
 							5,007
 						</p>
 						<p class="mb-6">total backers</p>
@@ -202,7 +217,8 @@
 				</div>
 				<div class="relative w-full h-[12px] bg-gray-100 rounded-xl">
 					<div
-						class="absolute inset-0 w-[80%] h-[12px] bg-skin-brand-accent rounded-md"></div>
+						id="goal-percent"
+						class="absolute inset-0 w-[89%] h-[12px] bg-skin-brand-accent rounded-md"></div>
 				</div>
 			</section>
 			<!-- About Section -->
@@ -239,14 +255,17 @@
 					</p>
 					<div class="contents md:flex md:items-center md:justify-between">
 						<div class="mb-8 md:mb-0 flex">
-							<span class="text-skin-brand-pri font-bold text-hdgXl mr-2"
+							<span
+								id="main-inventory-bamboo-stand"
+								data-reward="bamboo-stand"
+								class="text-skin-brand-pri font-bold text-hdgXl mr-2"
 								>101</span
 							>
 							<span class="text-bodyDesktop">left</span>
 						</div>
 						<button
 							type="button"
-							onclick="openDialog(thanksDialogEl)"
+							onclick="openDialog(projectsDialogEl)"
 							class="py-3 px-8 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert hover:bg-skin-active-brand-accent font-bold">
 							Select Reward
 						</button>
@@ -268,14 +287,17 @@
 					</p>
 					<div class="contents md:flex md:items-center md:justify-between">
 						<div class="mb-8 md:mb-0 flex">
-							<span class="text-skin-brand-pri font-bold text-hdgXl mr-2"
+							<span
+								id="main-inventory-black-edition"
+								data-reward="black-edition"
+								class="text-skin-brand-pri font-bold text-hdgXl mr-2"
 								>64</span
 							>
 							<span class="text-bodyDesktop">left</span>
 						</div>
 						<button
 							type="button"
-							onclick="openDialog(thanksDialogEl)"
+							onclick="openDialog(projectsDialogEl)"
 							class="py-3 px-8 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert hover:bg-skin-active-brand-accent font-bold">
 							Select Reward
 						</button>
@@ -297,13 +319,17 @@
 					</p>
 					<div class="contents md:flex md:items-center md:justify-between">
 						<div class="mb-8 md:mb-0 flex">
-							<span class="text-skin-brand-pri font-bold text-hdgXl mr-2"
+							<span
+								id="main-inventory-mahogany-special"
+								data-reward="mahogany-special"
+								class="text-skin-brand-pri font-bold text-hdgXl mr-2"
 								>0</span
 							>
 							<span class="text-bodyDesktop">left</span>
 						</div>
 						<button
 							type="button"
+							onclick="openDialog(projectsDialogEl)"
 							disabled
 							class="py-3 px-8 rounded-full bg-skin-text-pri text-skin-brand-tert font-bold">
 							Out of Stock
@@ -321,33 +347,39 @@
 						Back this project
 					</h2>
 					<!-- X icon to close dialog -->
-					<svg
-						class="fill-bg-skin-text-pri/80 cursor-pointer"
-						onclick="closeDialog(projectsDialogEl)"
-						width="15"
-						height="15"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
-							fill=""
-							fill-rule="evenodd"
-							opacity=".4" />
-					</svg>
+					<button
+						onclick="uncheckRadioBtn(), closeDialog(projectsDialogEl)"
+						type="button"
+						tabindex="1">
+						<svg
+							class="fill-bg-skin-text-pri/80 cursor-pointer"
+							width="15"
+							height="15"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+								fill=""
+								fill-rule="evenodd"
+								opacity=".4" />
+						</svg>
+					</button>
 				</div>
 
 				<form id="pledge-dialog-form" class="space-y-6">
 					<div
-						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:focus)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
 						<input
 							class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
 							type="radio"
+							autofocus
 							id="pledge-no-reward"
+							data-reward="no-reward"
 							name="pledgOptions"
 							autocomplete="off"
 							value="no-reward" />
 						<div>
 							<label
-								class="ml-6 text-skin-brand-pri font-bold"
+								class="ml-6 text-skin-brand-pri hover:text-skin-brand-accent font-bold"
 								for="radio-metric"
 								>Pledge with no reward</label
 							>
@@ -363,40 +395,48 @@
 							data-reward="no-reward">
 							<div
 								class="border-t-2 border-skin-text-pri/20 -mx-10"></div>
-							<p class="text-center mt-6">Enter your pledge</p>
-							<div class="mt-6 flex space-x-4 justify-center">
-								<div class="relative">
-									<input
-										class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
-										id="bamboo-pledge-amount"
-										name="bambooPledgeAmount"
-										type="text"
-										inputmode="numeric"
-										pattern="[1-9]*" />
-									<span class="absolute left-5 top-[13px]">$</span>
+							<div
+								class="contents md:flex md:justify-between md:items-center">
+								<p class="text-center mt-6">Enter your pledge</p>
+								<div class="mt-6 flex space-x-4 justify-center">
+									<div class="relative">
+										<input
+											class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
+											id="bamboo-pledge-amount"
+											name="bambooPledgeAmount"
+											data-reward="no-reward"
+											value=""
+											autocomplete="off"
+											type="text"
+											inputmode="numeric"
+											pattern="[1-9]*" />
+										<span class="absolute left-5 top-[13px]">$</span>
+									</div>
+									<button
+										onclick="openDialog(thanksDialogEl)"
+										data-reward="no-reward"
+										type="button"
+										class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent hover:bg-skin-active-brand-accent text-skin-brand-tert">
+										Continue
+									</button>
 								</div>
-								<button
-									onclick="openDialog(thanksDialogEl)"
-									type="button"
-									class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert">
-									Continue
-								</button>
 							</div>
 						</div>
 					</div>
 					<div
-						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:focus)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
 						<div class="flex items-center">
 							<input
 								class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
 								type="radio"
 								id="pledge-bamboo-stand"
 								name="pledgOptions"
+								data-reward="bamboo-stand"
 								autocomplete="off"
 								value="bamboo-stand" />
-							<div class="ml-6 flex flex-col">
+							<div class="ml-6 flex flex-col md:flex-row md:gap-4">
 								<label
-									class="text-skin-brand-pri font-bold"
+									class="text-skin-brand-pri hover:text-skin-brand-accent font-bold"
 									for="radio-metric"
 									>Bamboo Stand</label
 								>
@@ -410,8 +450,11 @@
 							helped us launch our promotional campaign, and you’ll be
 							added to a special Backer member list.
 						</p>
-						<div class="mt-6 flex items-end span-2">
+						<div
+							class="mt-6 md:mt-0 flex items-end span-2 md:row-start-1 md:row-end-1 md:col-start-2 md:col-end-2 md:justify-end md:items-center">
 							<span
+								id="dialog-inventory-bamboo-stand"
+								data-reward="bamboo-stand"
 								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
 								>101</span
 							>
@@ -424,41 +467,49 @@
 							data-reward="bamboo-stand">
 							<div
 								class="border-t-2 border-skin-text-pri/20 -mx-10"></div>
-							<p class="text-center mt-6">Enter your pledge</p>
-							<div class="mt-6 flex space-x-4 justify-center">
-								<div class="relative">
-									<input
-										class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
-										id="bamboo-pledge-amount"
-										name="bambooPledgeAmount"
-										type="text"
-										inputmode="numeric"
-										pattern="[1-9]*" />
-									<span class="absolute left-5 top-[13px]">$</span>
+							<div
+								class="contents md:flex md:justify-between md:items-center">
+								<p class="text-center mt-6">Enter your pledge</p>
+								<div class="mt-6 flex space-x-4 justify-center">
+									<div class="relative">
+										<input
+											class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
+											id="bamboo-pledge-amount"
+											name="bambooPledgeAmount"
+											data-reward="bamboo-stand"
+											type="text"
+											autocomplete="off"
+											value=""
+											inputmode="numeric"
+											pattern="[1-9]*" />
+										<span class="absolute left-5 top-[13px]">$</span>
+									</div>
+									<button
+										id="bamboo-stand-btn"
+										data-reward="bamboo-stand"
+										onclick="openDialog(thanksDialogEl)"
+										type="button"
+										class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent hover:bg-skin-active-brand-accent text-skin-brand-tert">
+										Continue
+									</button>
 								</div>
-								<button
-									id="bamboo-stand-btn"
-									onclick="openDialog(thanksDialogEl)"
-									type="button"
-									class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert">
-									Continue
-								</button>
 							</div>
 						</div>
 					</div>
 					<div
-						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
+						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:focus)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
 						<div class="flex items-center">
 							<input
 								class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
 								type="radio"
 								id="pledge-black-edition"
 								name="pledgOptions"
+								data-reward="black-edition"
 								autocomplete="off"
 								value="black-edition" />
-							<div class="ml-6 flex flex-col">
+							<div class="ml-6 flex flex-col md:flex-row md:gap-4">
 								<label
-									class="text-skin-brand-pri font-bold"
+									class="text-skin-brand-pri hover:text-skin-brand-accent font-bold"
 									for="radio-metric"
 									>Black Edition Stand</label
 								>
@@ -472,8 +523,11 @@
 							personal thank you. You’ll be added to our Backer member
 							list. Shipping is included.
 						</p>
-						<div class="mt-6 flex items-end span-2">
+						<div
+							class="mt-6 md:mt-0 flex items-end span-2 md:row-start-1 md:row-end-1 md:col-start-2 md:col-end-2 md:justify-end md:items-center">
 							<span
+								id="dialog-inventory-black-edition"
+								data-reward="black-edition"
 								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
 								>64</span
 							>
@@ -485,47 +539,57 @@
 							data-reward="black-edition">
 							<div
 								class="border-t-2 border-skin-text-pri/20 -mx-10"></div>
-							<p class="text-center mt-6">Enter your pledge</p>
-							<div class="mt-6 flex space-x-4 justify-center">
-								<div class="relative">
-									<input
-										class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
-										id="black-edition-amount"
-										name="blackEditionAmount"
-										type="text"
-										inputmode="numeric"
-										pattern="[1-9]*" />
-									<span class="absolute left-5 top-[13px]">$</span>
+							<div
+								class="contents md:flex md:justify-between md:items-center">
+								<p class="text-center mt-6">Enter your pledge</p>
+								<div class="mt-6 flex space-x-4 justify-center">
+									<div class="relative">
+										<input
+											class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
+											id="black-edition-amount"
+											name="blackEditionAmount"
+											type="text"
+											data-reward="black-edition"
+											value=""
+											autocomplete="off"
+											inputmode="numeric"
+											pattern="[1-9]*" />
+										<span class="absolute left-5 top-[13px]">$</span>
+									</div>
+									<button
+										onclick="openDialog(thanksDialogEl)"
+										data-reward="black-edition"
+										type="button"
+										class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent hover:bg-skin-active-brand-accent text-skin-brand-tert">
+										Continue
+									</button>
 								</div>
-								<button
-									onclick="openDialog(thanksDialogEl)"
-									type="button"
-									class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert">
-									Continue
-								</button>
 							</div>
 						</div>
 					</div>
 					<div
-						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:checked)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
-						<input
-							class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
-							type="radio"
-							id="pledge-mahogany-edition"
-							name="pledgOptions"
-							autocomplete="off"
-							disabled
-							value="mahogany-edition" />
+						class="js-pledge-select py-6 px-6 grid grid-cols-[auto_1fr] border-2 border-skin-text-pri/20 rounded-xl [&:has(input[type='radio']:focus)]:border-skin-brand-accent [&:has(input[type='radio']:disabled)]:opacity-50">
 						<div class="flex items-center">
-							<div class="ml-6 flex flex-col">
-								<label
-									class="text-skin-brand-pri font-bold"
-									for="radio-metric"
-									>Mahogany Special Edition</label
-								>
-								<span class="text-skin-brand-accent"
-									>Pledge $200 or more</span
-								>
+							<input
+								class="w-[24px] h-[24px] border-none ring-2 ring-skin-text-pri/40 text-white focus:ring-2 focus:ring-skin-text-pri/40"
+								type="radio"
+								id="pledge-mahogany-edition"
+								name="pledgOptions"
+								data-reward="mahogany-edition"
+								autocomplete="off"
+								disabled
+								value="mahogany-edition" />
+							<div class="flex items-center">
+								<div class="ml-6 flex flex-col md:flex-row md:gap-4">
+									<label
+										class="text-skin-brand-pri hover:text-skin-brand-accent font-bold"
+										for="radio-metric"
+										>Mahogany Special Edition</label
+									>
+									<span class="text-skin-brand-accent"
+										>Pledge $200 or more</span
+									>
+								</div>
 							</div>
 						</div>
 						<p class="mt-6 col-span-2">
@@ -533,8 +597,11 @@
 							T-Shirt, and a personal thank you. You’ll be added to our
 							Backer member list. Shipping is included.
 						</p>
-						<div class="mt-6 flex items-end span-2">
+						<div
+							class="mt-6 md:mt-0 flex items-end span-2 md:row-start-1 md:row-end-1 md:col-start-2 md:col-end-2 md:justify-end md:items-center">
 							<span
+								id="main-inventory-mahogany-special"
+								data-reward="mahogany-special"
 								class="text-skin-brand-pri font-bold text-hdgS leading-none mr-2"
 								>0</span
 							>
@@ -546,24 +613,31 @@
 							data-reward="mahogany-edition">
 							<div
 								class="border-t-2 border-skin-text-pri/20 -mx-10"></div>
-							<p class="text-center mt-6">Enter your pledge</p>
-							<div class="mt-6 flex space-x-4 justify-center">
-								<div class="relative">
-									<input
-										class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
-										id="mahogany-edition-amount"
-										name="mahoganyEditionAmount"
-										type="text"
-										inputmode="numeric"
-										pattern="[1-9]*" />
-									<span class="absolute left-5 top-[13px]">$</span>
+							<div
+								class="contents md:flex md:justify-between md:items-center">
+								<p class="text-center mt-6">Enter your pledge</p>
+								<div class="mt-6 flex space-x-4 justify-center">
+									<div class="relative">
+										<input
+											class="border-skin-text-pri/20 pl-8 py-3 rounded-full max-w-[100px] focus:border-transparent focus:ring-skin-brand-accent text-skin-brand-pri font-bold"
+											id="mahogany-edition-amount"
+											name="mahoganyEditionAmount"
+											type="text"
+											data-reward="mahogany-edition"
+											value=""
+											autocomplete="off"
+											inputmode="numeric"
+											pattern="[1-9]*" />
+										<span class="absolute left-5 top-[13px]">$</span>
+									</div>
+									<button
+										onclick="openDialog(thanksDialogEl)"
+										data-reward="mahogany-edition"
+										type="button"
+										class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent hover:bg-skin-active-brand-accent text-skin-brand-tert">
+										Continue
+									</button>
 								</div>
-								<button
-									onclick="openDialog(thanksDialogEl)"
-									type="button"
-									class="px-9 py-3 rounded-full cursor-pointer bg-skin-brand-accent text-skin-brand-tert">
-									Continue
-								</button>
 							</div>
 						</div>
 					</div>
@@ -573,7 +647,7 @@
 			<!-- Thanks for your support Dialog -->
 			<dialog
 				id="thanks-dialog"
-				class="mt-28 mx-auto space-y-6 text-center rounded-lg py-8 px-4 text-skin-text-pri/80 font-light">
+				class="mt-28 mx-auto max-w-xl space-y-6 text-center rounded-lg py-8 px-4 text-skin-text-pri/80 font-light">
 				<svg
 					class="inline-block"
 					width="64"
@@ -604,6 +678,8 @@
 				</button>
 			</dialog>
 		</main>
+
+		<script src="pledge.js" async></script>
 		<script src="main.js" async></script>
 		<!-- May use defer instead of async in script tag -->
 	</body>
