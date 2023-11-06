@@ -750,12 +750,16 @@ button:focus {
   left: 1.25rem;
 }
 
-.top-16 {
-  top: 4rem;
-}
-
 .top-\[13px\] {
   top: 13px;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-16 {
+  top: 4rem;
 }
 
 .z-10 {
@@ -833,6 +837,10 @@ button:focus {
   margin-top: 1.5rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -873,16 +881,32 @@ button:focus {
   width: 24px;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .w-\[80px\] {
   width: 80px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
+.w-\[91\%\] {
+  width: 91%;
 }
 
 .w-\[89\%\] {
   width: 89%;
 }
 
-.w-full {
-  width: 100%;
+.w-\[94\%\] {
+  width: 94%;
 }
 
 .max-w-\[100px\] {
@@ -963,6 +987,10 @@ button:focus {
   border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
 }
 
+.divide-skin-canvas-sec\/40 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(151 151 151 / 0.4);
+}
+
 .divide-skin-canvas-sec\/20 > :not([hidden]) ~ :not([hidden]) {
   border-color: rgb(151 151 151 / 0.2);
 }
@@ -1017,11 +1045,6 @@ button:focus {
   border-color: rgb(122 122 122 / 0.2);
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1051,6 +1074,16 @@ button:focus {
   background-color: rgb(122 122 122 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\.\/assets\/images\/image-hero-mobile\.jpg\'\)\] {
   background-image: url('../assets/images/image-hero-mobile.jpg');
 }
@@ -1063,16 +1096,16 @@ button:focus {
   background-position: center;
 }
 
-.fill-skin-active-brand-accent {
-  fill: #147A73;
-}
-
 .fill-skin-dim-brand-accent {
   fill: #2F2F2F;
 }
 
 .fill-white {
   fill: #fff;
+}
+
+.fill-skin-active-brand-accent {
+  fill: #147A73;
 }
 
 .px-10 {
@@ -1144,6 +1177,10 @@ button:focus {
   padding-top: 2rem;
 }
 
+.pr-10 {
+  padding-right: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1198,11 +1235,6 @@ button:focus {
   line-height: 1;
 }
 
-.text-skin-active-brand-accent {
-  --tw-text-opacity: 1;
-  color: rgb(20 122 115 / var(--tw-text-opacity));
-}
-
 .text-skin-brand-accent {
   --tw-text-opacity: 1;
   color: rgb(60 179 171 / var(--tw-text-opacity));
@@ -1227,16 +1259,29 @@ button:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-skin-active-brand-accent {
+  --tw-text-opacity: 1;
+  color: rgb(20 122 115 / var(--tw-text-opacity));
+}
+
 .opacity-20 {
   opacity: 0.2;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .opacity-40 {
   opacity: 0.4;
 }
 
-.opacity-50 {
-  opacity: 0.5;
+.opacity-100 {
+  opacity: 1;
 }
 
 .ring-2 {
@@ -1254,6 +1299,10 @@ button:focus {
   background-color: rgb(20 122 115 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-skin-canvas-sec\/30:hover {
+  background-color: rgb(151 151 151 / 0.3);
+}
+
 .hover\:bg-skin-canvas-sec\/10:hover {
   background-color: rgb(151 151 151 / 0.1);
 }
@@ -1265,6 +1314,10 @@ button:focus {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.hover\:underline-offset-1:hover {
+  text-underline-offset: 1px;
 }
 
 .focus\:border-transparent:focus {
@@ -1368,6 +1421,14 @@ button:focus {
     flex-direction: row;
   }
 
+  .md\:place-items-start {
+    place-items: start;
+  }
+
+  .md\:place-items-center {
+    place-items: center;
+  }
+
   .md\:items-center {
     align-items: center;
   }
@@ -1378,6 +1439,10 @@ button:focus {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem;
   }
 
   .md\:gap-4 {
@@ -1432,6 +1497,11 @@ button:focus {
   .md\:text-hdgL {
     font-size: 1.75rem;
   }
+}
+
+.\[\&\:has\(input\[type\=\'radio\'\]\:checked\)\]\:border-skin-brand-accent:has(input[type='radio']:checked) {
+  --tw-border-opacity: 1;
+  border-color: rgb(60 179 171 / var(--tw-border-opacity));
 }
 
 .\[\&\:has\(input\[type\=\'radio\'\]\:disabled\)\]\:opacity-50:has(input[type='radio']:disabled) {

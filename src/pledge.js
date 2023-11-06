@@ -13,7 +13,7 @@ let supportData = {
 	},
 }
 
-const pledgeSupport = (value, dataReward) => {
+const updateData = (value, dataReward) => {
 	let currentPercent = supportData.percent()
 	supportData.fundsGiven += value
 	supportData.peopleGiven += 1
@@ -29,9 +29,6 @@ const pledgeSupport = (value, dataReward) => {
 	const dialogInventoryEl = document.querySelector(
 		`#dialog-inventory-${dataReward}`
 	)
-
-	console.log(currentPercent)
-	console.log(supportData.percent())
 
 	totalBacked.textContent = `$${supportData.fundsGiven.toLocaleString()}`
 	totalBackers.textContent = supportData.peopleGiven.toLocaleString()
@@ -62,7 +59,8 @@ const displayData = () => {
 				`#pledge-${dataSetAttr}`
 			)
 			const inputValue = Number(inputReward.value)
-			pledgeSupport(inputValue, dataSetAttr)
+
+			updateData(inputValue, dataSetAttr)
 			console.log(supportData)
 
 			// Hide the input pledge box after button clicked
@@ -72,9 +70,6 @@ const displayData = () => {
 			closeDialog(projectsDialogEl)
 		})
 	})
-	//Get the data attribute and set it in a variable
-	//when button is clicked, find input with same data attribute
-	//grab the two values (value and data attribute) and plug it into pledgeSupport function
 }
 
 //Uncheck button when closing idalog with x icon

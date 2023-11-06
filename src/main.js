@@ -10,10 +10,9 @@ pledgeDialogArr.forEach((el) => {
 			const selectedPledgeBox = document.querySelector(
 				`div[data-reward=${e.target.value}]`
 			)
+			const allPledgeBoxes = document.querySelectorAll("div[data-reward]")
 			//Show the pledge box if radio button is clicked
 			selectedPledgeBox.classList.toggle("hidden")
-
-			const allPledgeBoxes = document.querySelectorAll("div[data-reward]")
 
 			allPledgeBoxes.forEach((box) => {
 				if (
